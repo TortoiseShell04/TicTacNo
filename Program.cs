@@ -14,6 +14,7 @@ namespace App
                                       ,{0,0,0}};
 
         static bool gameIsOn = true;
+        static bool wonLost = false;
 
         // Main method
         public static void Main(string[] args)
@@ -24,9 +25,15 @@ namespace App
              Console.Clear();
              Display();
              PlayerMove();
-             GameMove();
              Check();
-             CheckForDraw();
+             if (!wonLost)
+             {
+                 CheckForDraw();
+             }
+             if (gameIsOn)
+             {
+                 GameMove();
+             }
            }
             
         } 
@@ -62,11 +69,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[0,0] == "o" && gameZone[0,1] == "o" && gameZone[0,2] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
             if (gameZone[1,0] == gameZone[1,1] && gameZone[1,1] == gameZone[1,2])
@@ -75,11 +84,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[1,0] == "o" && gameZone[1,1] == "o" && gameZone[1,2] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
             if (gameZone[2,0] == gameZone[2,1] && gameZone[2,1] == gameZone[2,2])
@@ -88,11 +99,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[2,0] == "o" && gameZone[2,1] == "o" && gameZone[2,2] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
 
@@ -103,11 +116,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[0,0] == "o" && gameZone[1,0] == "o" && gameZone[2,0] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
             if (gameZone[0,1] == gameZone[1,1] && gameZone[1,1] == gameZone[2,1])
@@ -116,11 +131,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[0,1] == "o" && gameZone[1,1] == "o" && gameZone[2,1] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
             if (gameZone[0,2] == gameZone[1,2] && gameZone[1,2] == gameZone[2,2])
@@ -129,11 +146,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[0,2] == "o" && gameZone[1,2] == "o" && gameZone[2,2] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
 
@@ -144,11 +163,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[0,0] == "o" && gameZone[1,1] == "o" && gameZone[2,2] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
             if(gameZone[0,2] == gameZone[1,1] && gameZone[1,1] == gameZone[2,0])
@@ -157,11 +178,13 @@ namespace App
                 {
                     Console.WriteLine($"You won");
                     gameIsOn = false;
+                    wonLost = true;
                 }
                 if (gameZone[0,2] == "o" && gameZone[1,1] == "o" && gameZone[2,0] == "o")
                 {
                     Console.WriteLine($"You lost");
                     gameIsOn = false;
+                    wonLost = true;
                 }
             }
 
