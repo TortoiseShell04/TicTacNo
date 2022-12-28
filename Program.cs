@@ -3,17 +3,22 @@ namespace App
 {
     class Program
     {
+        // Array for the playing feild
         static string[,] gameZone = {{"□","□","□"},
                                      {"□","□","□"},
                                      {"□","□","□"}};
 
+        // Array for available spaces on the board
         static int[,] avaibableMove = {{0,0,0}
                                       ,{0,0,0}
                                       ,{0,0,0}};
 
         static bool gameIsOn = true;
+
+        // Main method
         public static void Main(string[] args)
         {
+           // Game loop
            while(gameIsOn)
            {
              Console.Clear();
@@ -25,6 +30,9 @@ namespace App
            }
             
         } 
+
+
+        // Method responsible for displaying the game board
         public static void Display()
         {
             int count = 0;
@@ -44,6 +52,7 @@ namespace App
             }
         }   
 
+        // Checks if the game ended and who won
         public static void Check()
         {
             // Horrizontal checks
@@ -158,6 +167,7 @@ namespace App
 
         }
   
+        // Method for user input
         public static void PlayerMove()
         {
             Console.WriteLine($"Select column: ");
@@ -180,6 +190,7 @@ namespace App
             }
         }
     
+        // Genenrating random game move
         public static void GameMove()
         {
             bool MoveHasBeenMade = false;
@@ -202,7 +213,8 @@ namespace App
                 }
             }
         }
-    
+
+        // Checks if a draw occured
         public static void CheckForDraw()
         {
             int count = 0;
