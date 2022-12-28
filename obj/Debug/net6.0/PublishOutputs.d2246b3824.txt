@@ -1,0 +1,5 @@
+/home/bruh/TicTacToe/bin/Debug/net6.0/publish/TicTacToe
+/home/bruh/TicTacToe/bin/Debug/net6.0/publish/TicTacToe.dll
+/home/bruh/TicTacToe/bin/Debug/net6.0/publish/TicTacToe.deps.json
+/home/bruh/TicTacToe/bin/Debug/net6.0/publish/TicTacToe.runtimeconfig.json
+/home/bruh/TicTacToe/bin/Debug/net6.0/publish/TicTacToe.pdb

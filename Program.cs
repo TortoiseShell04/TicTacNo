@@ -23,9 +23,9 @@ namespace App
            {
              Console.Clear();
              Display();
-             Check();
              PlayerMove();
              GameMove();
+             Check();
              CheckForDraw();
            }
             
@@ -172,12 +172,13 @@ namespace App
         {
             Console.WriteLine($"Select column: ");
             Console.WriteLine($"1,2,3?");
-            int col = Convert.ToInt32(Console.ReadLine()) - 1;
-
+            int col = Convert.ToInt32(Console.ReadLine());
+            col--;
 
             Console.WriteLine("Select row: ");
             Console.WriteLine($"1 \n2 \n3 ");
-            int row = Convert.ToInt32(Console.ReadLine()) - 1;
+            int row = Convert.ToInt32(Console.ReadLine());
+            row--;
             
             if (avaibableMove[row,col] == 0)
             {
@@ -198,8 +199,8 @@ namespace App
             {
                 Random move = new();
 
-                int row = move.Next(0,2);
-                int col = move.Next(0,2);
+                int row = move.Next(0,3);
+                int col = move.Next(0,3);
 
                 if (avaibableMove[row,col] == 0)
                 {
